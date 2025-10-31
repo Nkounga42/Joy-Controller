@@ -3,17 +3,11 @@ D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.GeneratedMSB
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.AssemblyInfoInputs.cache
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.AssemblyInfo.cs
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.csproj.CoreCompileInputs.cache
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\JoyController.exe
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\JoyController.deps.json
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\JoyController.runtimeconfig.json
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\JoyController.dll
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\JoyController.pdb
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
-D:\web master\Joy Controller\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\SharpDX.dll
 D:\web master\Joy Controller\bin\Debug\net6.0-windows\SharpDX.XInput.dll
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyContr.8B4E814C.Up2Date
@@ -22,3 +16,4 @@ D:\web master\Joy Controller\obj\Debug\net6.0-windows\refint\JoyController.dll
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.pdb
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.genruntimeconfig.cache
 D:\web master\Joy Controller\obj\Debug\net6.0-windows\ref\JoyController.dll
+D:\web master\Joy Controller\obj\Debug\net6.0-windows\JoyController.sourcelink.json

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JoyController")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+430affef4ef1a0144397947a07118065339ec71f")]
 [assembly: System.Reflection.AssemblyProductAttribute("JoyController")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JoyController")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

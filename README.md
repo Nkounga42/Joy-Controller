@@ -1,6 +1,6 @@
-# 🎮 Joy Controller - Contrôle de souris par manette Xbox StickControl
+# 🎮 Joy Controller - Contrôle de souris par manette Xbox
 
-Contrôlez votre curseur Windows avec une manette Xbox ou compatible XInput.
+Contrôlez votre curseur Windows avec une manette Xbox ou compatible XInput grâce à une **interface graphique moderne et intuitive**.
 
 ## 🚀 Installation
 
@@ -26,6 +26,15 @@ dotnet build
 dotnet run
 ```
 
+## 🎯 Interface Graphique
+
+L'application dispose d'une **interface graphique complète** qui affiche :
+- 📊 **Visualiseurs de joysticks en temps réel** - Voyez exactement comment vos joysticks réagissent
+- 🎯 **Indicateurs de boutons** - État visuel de tous les boutons
+- 🔌 **État de connexion** - Sachez instantanément si votre manette est connectée
+- ⚙️ **Accès rapide à la configuration** - Un clic pour ajuster vos paramètres
+- 🔔 **Icône dans la barre des tâches** - Minimisez l'application sans la fermer
+
 ## 🎯 Contrôles
 
 | Contrôle | Action |
@@ -35,31 +44,51 @@ dotnet run
 | **Bouton A** | Clic gauche |
 | **Bouton B** | Clic droit |
 | **Bouton X** | Clic milieu |
-| **Bouton Start** | Quitter l'application |
 
 ## ⚙️ Configuration
 
-Vous pouvez ajuster la sensibilité et l'accélération dans le fichier `Program.cs` :
+### Interface graphique de configuration
 
-```csharp
-const int sensitivity = 15; // Augmentez pour un curseur plus rapide
-const short deadzone = 8000; // Zone morte du joystick
+L'application dispose d'une **fenêtre de configuration intuitive** accessible directement depuis l'interface principale en cliquant sur le bouton **"⚙️ Configuration"**
 
-// Ligne 104: Courbe d'accélération (1.0 = linéaire, 1.5 = accélération modérée, 2.0 = forte accélération)
-Math.Pow(Math.Abs(velocityX), 1.5)
+La fenêtre de configuration vous permet d'ajuster :
+- 🎯 **Sensibilité du curseur** (5-50)
+- 🎮 **Zone morte (deadzone)** (3000-15000) - élimine le drift du joystick
+- 🚀 **Courbe d'accélération** (1.0-3.0) - contrôle la progressivité du mouvement
+- ⚡ **Multiplicateur de vitesse** (0.5-3.0) - vitesse globale du curseur
+- 📜 **Zone morte du scroll** (3000-12000)
+- 🔄 **Sensibilité du scroll** (10-100)
 
-// Ligne 109: Multiplicateur de vitesse (augmentez pour curseur plus rapide)
-int deltaX = (int)(accelX * sensitivity * 2);
+### Calibrage en temps réel
+
+La fenêtre inclut un **outil de calibrage** qui affiche en direct :
+- Position du joystick gauche (axe X et Y)
+- Position du joystick droit (scroll)
+- Détection automatique des zones mortes
+
+Cliquez sur **"▶️ Démarrer calibrage"** pour tester vos réglages en temps réel !
+
+### Sauvegarde automatique
+
+Vos paramètres sont **automatiquement sauvegardés** dans :
+```
+%APPDATA%\JoyController\config.json
 ```
 
 ### Valeurs recommandées :
-- **sensitivity** : entre 10 et 30
-- **deadzone** : entre 5000 et 10000
-- **courbe d'accélération** : entre 1.0 (linéaire) et 2.0 (forte accélération)
-- **multiplicateur** : entre 1 et 3
+- **Sensibilité** : entre 10 et 20 (usage général), 25-40 (gaming)
+- **Deadzone** : entre 5000 et 10000 (8000 par défaut)
+- **Courbe d'accélération** : entre 1.0 (linéaire) et 2.0 (forte accélération)
+- **Multiplicateur** : entre 1.0 et 2.5
+- **Scroll deadzone** : entre 6000 et 8000
+- **Scroll sensibilité** : entre 20 et 50
 
 ## 📋 Fonctionnalités
 
+- ✅ **Interface graphique moderne et intuitive**
+- ✅ **Visualisation en temps réel** des joysticks et boutons
+- ✅ **Icône dans la barre des tâches** avec menu contextuel
+- ✅ **Interface de configuration** avec calibrage en temps réel
 - ✅ Déplacement fluide du curseur avec vélocité variable
 - ✅ Accélération progressive (petits mouvements précis, grands mouvements rapides)
 - ✅ Zone morte configurable pour éviter le drift
@@ -67,9 +96,12 @@ int deltaX = (int)(accelX * sensitivity * 2);
 - ✅ Scroll avec vélocité variable via joystick droit
 - ✅ Détection automatique de la manette
 - ✅ Gestion de la déconnexion de la manette
+- ✅ **Sauvegarde persistante** des paramètres
+- ✅ Contrôle Start/Stop depuis l'interface
 
 ## 🛠️ Technologies utilisées
 
+- **Windows Forms** : Interface graphique moderne
 - **SharpDX.XInput** : Bibliothèque pour accéder aux entrées XInput
 - **Win32 API** : Pour contrôler le curseur et les événements de souris
 - **.NET 6.0** : Framework d'exécution
@@ -87,22 +119,29 @@ int deltaX = (int)(accelX * sensitivity * 2);
 - Testez la manette dans les paramètres Windows (Paramètres > Périphériques > Contrôleurs de jeu)
 - Assurez-vous que les pilotes Xbox sont installés
 
-**Curseur qui bouge tout seul** :
-- Augmentez la valeur de `deadzone` dans le code
+**Curseur qui bouge tout seul (drift)** :
+- Ouvrez la fenêtre de configuration (bouton Back ou SHIFT au démarrage)
+- Augmentez la valeur de **"Zone morte (deadzone)"**
+- Utilisez le calibrage en temps réel pour trouver la bonne valeur
 
 **Curseur trop lent/rapide** :
-- Ajustez la valeur de `sensitivity`
-- Modifiez le multiplicateur (ligne 109 : `sensitivity * 2`)
+- Ajustez **"Sensibilité du curseur"** et **"Multiplicateur vitesse"** dans la configuration
+- Testez en temps réel avec l'outil de calibrage
 
 **Accélération trop forte/faible** :
-- Changez l'exposant de la courbe d'accélération (ligne 104)
-- `1.0` = mouvement linéaire (pas d'accélération)
-- `1.5` = accélération modérée (par défaut)
-- `2.0` = forte accélération
+- Modifiez **"Courbe d'accélération"** dans la configuration :
+  - `1.0` = mouvement linéaire (pas d'accélération)
+  - `1.5` = accélération modérée (par défaut)
+  - `2.0-3.0` = forte accélération
 
 **Scroll trop lent/rapide** :
-- Modifiez le multiplicateur de vélocité (ligne 169 : `velocity * 30`) dans `Program.cs`
-- Augmentez ou diminuez la zone morte du scroll (ligne 161 : `scrollDeadzone = 6000`)
+- Ajustez **"Sensibilité scroll"** et **"Zone morte scroll"** dans la configuration
+- Augmentez la sensibilité pour un scroll plus rapide
+- Diminuez pour plus de précision
+
+**L'application ne démarre pas** :
+- Vérifiez que .NET 6.0 ou supérieur est installé
+- Essayez de reconstruire le projet avec `dotnet build`
 
 ## 📄 Licence
 
